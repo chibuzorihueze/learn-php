@@ -2,22 +2,8 @@ version: '3'
 
 services:
 
-  mysql:
-    image: mysql:5
-    platform: linux/amd64
-    volumes:
-      - db_data:/var/lib/mysql
-    restart: always
-    environment:
-      MYSQL_DATABASE: learn-php
-      MYSQL_USER: learn-php
-      MYSQL_PASSWORD: password
-      MYSQL_ROOT_PASSWORD: password
-    networks:
-      - learn-php
-
-  php:
-    image: php:7.4-apache
+  wamp:
+    image: nanoserver/wamp:latest
     ports:
       - 1234:80
     volumes:
@@ -27,21 +13,7 @@ services:
     networks:
       - learn-php
 
-  phpmyadmin:
-    image: phpmyadmin:latest
-    restart: always
-    depends_on:
-      - mysql
-    ports:
-      - 1233:80
-    environment:
-      PMA_HOST: mysql
-      MYSQL_ROOT_PASSWORD: password
-    networks:
-      - learn-php
-
 volumes:
-  db_data: {}
   wp_data: {}
 
 networks:
