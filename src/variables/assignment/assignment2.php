@@ -1,4 +1,5 @@
 <?php
+// php program to calculate nepa bill
 
 $tarifRate = 100;
 $wats = 1000;
