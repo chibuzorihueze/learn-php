@@ -9,9 +9,10 @@ $time = 2; // years
 $intrest = $principal * $rate * $time;
 
 echo sprintf(
-    'Dear customer you invested N%d at a profit rate of N%.2f your intrest for %dyears is N%d',
+    'Dear customer you invested N%1$s at a rate of N%2$s your compounding interest for a period of %3$syears is N%4$s',
     number_format($principal, 2),
     round($rate, 2),
     $time,
     $intrest,
 );
+
